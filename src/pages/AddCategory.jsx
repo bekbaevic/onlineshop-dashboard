@@ -1,11 +1,10 @@
-import { Box, Button, FormControl, FormLabel, Input, Text, useToast } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormLabel, Input, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Form } from 'react-router-dom'
 
 const AddCategory = () => {
-  const [title, setTitle] = useState()
-  const [image, setImage] = useState()
+  const [title, setTitle] = useState('')
+  const [image, setImage] = useState('')
   const toast = useToast()
   const URL = "https://onlineshop-database.onrender.com/categories"
   function setCategories(e) {

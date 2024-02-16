@@ -1,6 +1,4 @@
-import { GiHamburgerMenu } from "react-icons/gi";
-
-import { Box, Button, HStack, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import './App.css'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
@@ -18,7 +16,6 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   const [showSidebar, setShowSidebar] = useState(false)
   const borderColor = useColorModeValue("#636363", '#B4B4B4')
-  const overlayColor = useColorModeValue("#fff", '#000')
 
   return (
     <MainContext.Provider value={{ state, dispatch }}>

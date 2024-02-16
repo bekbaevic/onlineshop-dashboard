@@ -1,4 +1,4 @@
-import { Box, Input, Text, FormControl, useColorModeValue, Button, FormLabel, useToast, Textarea, Select } from '@chakra-ui/react'
+import { Box, Input, Text, FormControl, Button, FormLabel, useToast, Textarea, Select } from '@chakra-ui/react'
 import React, { useContext, useEffect, useState } from 'react'
 import MainContext from '../store/context'
 import { getCategories } from '../hooks/getDataAxios'
@@ -7,7 +7,7 @@ import axios from 'axios'
 const AddProducts = () => {
   const URL1 = 'https://onlineshop-database.onrender.com/products'
   const URL2 = "https://onlineshop-database.onrender.com/categories"
-  const {state, dispatch} = useContext(MainContext)
+  const { state, dispatch } = useContext(MainContext)
   const [title, setTitle] = useState('')
   const [image, setImage] = useState('')
   const [description, setDescription] = useState('')
@@ -18,7 +18,7 @@ const AddProducts = () => {
 
   function setProduct(e) {
     e.preventDefault()
-    const data = { title, price, image, description, categoryId}
+    const data = { title, price, image, description, categoryId }
     axios.post(URL1, data)
       .then((res) => {
         toast({ title: 'Product created', status: 'success', duration: 1000, isClosable: true, position: 'bottom-right' })
